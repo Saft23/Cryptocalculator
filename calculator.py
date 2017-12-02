@@ -18,8 +18,11 @@ class Calculator(object):
                 else:
                     return float(item["price_usd"])*self.currency(currency)
 
-    def currency(self, currency) :
-        return self.currencyData['rates'][currency]
+    def currency(self, currency):
+        try:
+            return self.currencyData['rates'][currency]
+        except Exception: 
+            return 0
 
     def sumOfCoins(self,coinList):
         pass

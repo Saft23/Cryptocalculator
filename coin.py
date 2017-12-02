@@ -47,6 +47,8 @@ if(len(sys.argv) > 1):
             wallet.editWallet()
         else:
             sumWallet = wallet.calculateWorth(sys.argv[2])
+            if(sumWallet == 0):
+                print("Unkown currency or empty wallet")
             print(str(sumWallet) + sys.argv[2].upper())
             
     if(sys.argv[1] == "value"):
