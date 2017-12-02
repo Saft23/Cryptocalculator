@@ -17,3 +17,12 @@ ethereum: 942.4561313
   
   
 To make sure you edit the corrent file, use "coin wallet e" and "coin expenses e" to edit the dotfiles.  
+  
+  
+  
+  
+  
+The guidelines regarding the API:  
+Please limit requests to no more than 10 per minute.  
+Endpoints update every 5 minutes.  
+
