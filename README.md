@@ -18,7 +18,7 @@ ethereum: 942.4561313
   
 To make sure you edit the corrent file, use "coin wallet e" and "coin expenses e" to edit the dotfiles.  
   
-Available commands:  
+Available arguments/commands:  
 ```
 sum percent
 sum sek
