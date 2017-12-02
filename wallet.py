@@ -29,7 +29,6 @@ class Wallet(object):
                 numCoin = numCoin + item[fin+2]
                 fin = fin +1
             coinWorth = float(self.calculator.priceOfCoin(coin,currency.upper()))
-            # print(coinWorth)
             numCoin = float(numCoin)
             returnValue = returnValue + (coinWorth * numCoin)
             self.walletArray.append(returnValue)

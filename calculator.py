@@ -7,12 +7,7 @@ class Calculator(object):
         self.data = self.response.json()
         pass
     def priceOfCoin(self, name, currency):
-        # adress = "https://api.coinmarketcap.com/v1/ticker/" + name + "?convert=" + currency 
-        # response = requests.get(adress)
-        # data = response.json()
-        # coin = data[0]
         for item in self.data:
-            # pprint(item)
             if item['id'] == name:
                 if(currency == "USD"):
                     return item["price_usd"]
