@@ -17,6 +17,7 @@ expenses = Expenses()
 #wallet usd
 #wallet sek
 #wallet e
+#value coin currency
 
 if(len(sys.argv) > 1):
 
@@ -40,18 +41,23 @@ if(len(sys.argv) > 1):
                 expenses.editExpenses()
         else:
             sumExpenses = expenses.calculateExpenses()
-            print(str(sumExpenses) + " sek")
+            print(str(sumExpenses) + "sek")
 
     if(sys.argv[1] == "wallet"):
         if(sys.argv[2] == "usd"):
             sumWallet = wallet.calculateWorth("usd")
-            print(str(sumWallet) + " usd")
+            print(str(sumWallet) + "usd")
         elif(sys.argv[2] == "sek"):
             sumWallet = wallet.calculateWorth("sek")
-            print(str(sumWallet) + " sek")
+            print(str(sumWallet) + "sek")
         elif(sys.argv[2] == "e"):
             wallet.editWallet()
             
+    if(sys.argv[1] == "value"):
+        if(len(sys.argv) > 3):
+            print(str(calculator.priceOfCoin(sys.argv[2], sys.argv[3])) + sys.argv[3])
+        else:
+            print("value needs cryptoname and currency as argument")
 else:
     print("Give the program more arguments")
 
