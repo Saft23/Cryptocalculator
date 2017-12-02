@@ -5,7 +5,6 @@ from wallet import Wallet
 from expenses import Expenses
 import sys
 
-calculator = Calculator()
 wallet = Wallet()
 expenses = Expenses()
 
@@ -55,6 +54,7 @@ if(len(sys.argv) > 1):
             
     if(sys.argv[1] == "value"):
         if(len(sys.argv) > 3):
+            calculator = Calculator()
             print(str(calculator.priceOfCoin(sys.argv[2], sys.argv[3])) + sys.argv[3])
         else:
             print("value needs cryptoname and currency as argument")

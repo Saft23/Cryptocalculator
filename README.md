@@ -41,7 +41,9 @@ Endpoints update every 5 minutes.
   
   
 todo:  
+Optimize api requests  
 bitfinex api key  
 bittrex api key  
 coinbase api??  
 fix parsing in .wallet  
+
