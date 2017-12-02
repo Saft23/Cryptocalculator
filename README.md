@@ -20,13 +20,14 @@ To make sure you edit the corrent file, use "coin wallet e" and "coin expenses e
   
 Available arguments/commands:  
 ```
-sum percent
-sum sek
-expenses
-wallet usd
-wallet sek
-wallet e
-value coin currency
+sum percent             //Prints the percentage of the value compared to the expenses  
+sum sek                 //Prints the difference between value and expenses  
+expenses                //Prints the expenses  
+expenses e              //Edits the expenses file  
+wallet usd              //Prints the value in the wallet in usd  
+wallet sek              //Prints the value in the wallet in sek  
+wallet e                //Edits the wallet file  
+value coin currency     //Prints the current price of the given coin in the given currency  
 ```
   
   
