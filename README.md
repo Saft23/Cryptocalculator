@@ -26,3 +26,11 @@ The guidelines regarding the API:
 Please limit requests to no more than 10 per minute.  
 Endpoints update every 5 minutes.  
 
+  
+  
+  
+todo:  
+bitfinex api key  
+bittrex api key  
+coinbase api??  
+fix parsing in .wallet  
