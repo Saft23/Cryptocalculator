@@ -43,14 +43,11 @@ if(len(sys.argv) > 1):
             print(str(sumExpenses) + "sek")
 
     if(sys.argv[1] == "wallet"):
-        if(sys.argv[2] == "usd"):
-            sumWallet = wallet.calculateWorth("usd")
-            print(str(sumWallet) + "usd")
-        elif(sys.argv[2] == "sek"):
-            sumWallet = wallet.calculateWorth("sek")
-            print(str(sumWallet) + "sek")
-        elif(sys.argv[2] == "e"):
+        if(sys.argv[2] == "e"):
             wallet.editWallet()
+        else:
+            sumWallet = wallet.calculateWorth(sys.argv[2])
+            print(str(sumWallet) + sys.argv[2].upper())
             
     if(sys.argv[1] == "value"):
         if(len(sys.argv) > 3):
