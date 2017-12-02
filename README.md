@@ -16,4 +16,4 @@ ethereum: 942.4561313
 //ENDOFFILE  
   
   
-To make sure you edit the corrent file, use "coin wallet e" and "coin expences e" to edit the dotfiles.  
+To make sure you edit the corrent file, use "coin wallet e" and "coin expenses e" to edit the dotfiles.  
