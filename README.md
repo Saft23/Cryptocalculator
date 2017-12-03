@@ -44,7 +44,7 @@ Endpoints update every 5 minutes.
   
   
 todo:  
-Optimize api requests  
+Optimize api requests - done  
 bitfinex api key  
 bittrex api key  
 coinbase api??  
