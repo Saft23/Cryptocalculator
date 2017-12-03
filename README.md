@@ -41,7 +41,7 @@ Optimize api requests - done
 bitfinex api key  
 bittrex api key  
 coinbase api??  
-fix parsing in .wallet  
+fix parsing in .wallet - Quick fix
   
   
   
