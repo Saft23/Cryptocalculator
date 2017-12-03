@@ -22,7 +22,8 @@ To make sure you edit the corrent file, use "coin wallet e" and "coin expenses e
 Available arguments/commands:  
 ```
 sum percent             //Prints the percentage of the value compared to the expenses  
-sum sek                 //Prints the difference between value and expenses  
+sum usd                 //Prints the difference between value and expenses in usd
+sum ___                 //Prints the difference between value and expenses if the currency is avalible
 expenses                //Prints the expenses  
 expenses e              //Edits the expenses file  
 wallet usd              //Prints the value in the wallet in usd  
