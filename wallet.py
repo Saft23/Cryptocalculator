@@ -2,7 +2,6 @@ from calculator import Calculator
 import os
 class Wallet(object):
     wallet = None
-    walletArray = []
     def __init__(self):
         relativePath = os.path.dirname(__file__)
         self.path = os.path.join(relativePath,'.wallet')
@@ -10,13 +9,14 @@ class Wallet(object):
             self.wallet=open(self.path, 'w+')
             self.wallet.close()
 
-    def calculateWorth(self, currency):
+    def getWalletArray(self, currency, coinOrValue):
         self.calculator = Calculator()
         self.wallet=open(self.path)
         walletlist = self.wallet.read().split('\n')
         self.wallet.close()
         walletlist.pop()
-        returnValue = 0.0
+        returnValue = []
+        returnCoin = []
         for item in walletlist:
             fin = item.find(':')
             beg = 0
@@ -30,10 +30,25 @@ class Wallet(object):
                 fin = fin +1
             coinWorth = float(self.calculator.priceOfCoin(coin,currency.upper()))
             numCoin = float(numCoin)
-            returnValue = returnValue + (coinWorth * numCoin)
-            self.walletArray.append(returnValue)
+            returnValue.append(coinWorth * numCoin)
+            returnCoin.append(coin)
+        if(coinOrValue == 'coin'):
+            return returnCoin
+        elif(coinOrValue == 'value'):
+            return returnValue
 
-        return returnValue
+    def distribution(self):
+        coinArray = self.getWalletArray('usd', 'coin')
+        valueArray = self.getWalletArray('usd', 'value') 
+        total = self.calculateWorth('usd') 
+        i = 0
+        for coin in coinArray:
+            print(coin + ": " + ("%.2f" % ((valueArray[i] / total)*100)) + "%")
+            i = i +1
+
+
+    def calculateWorth(self, currency):
+        return sum(self.getWalletArray(currency, 'value'))
 
     def editWallet(self):
         os.system("vim " + self.path)
