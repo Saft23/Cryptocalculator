@@ -29,6 +29,7 @@ class Calculator(object):
 
         currentTime = int(time.time())
         updateTime = int(self.data[0]['last_updated'])
+        # 600 equals 10 minutes in seconds 
         if(updateTime < (currentTime - 600)):
             self.updateCache() 
         
