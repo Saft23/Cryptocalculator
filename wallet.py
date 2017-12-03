@@ -82,6 +82,14 @@ class Wallet(object):
             self.wallet.close()
 
 
+    def listWallet(self):
+        coinArray = self.getWalletArray('usd','coin')
+        countArray = self.getWalletArray('usd','count')
+        i = 0
+        for count in countArray:
+            print(coinArray[i] + ": " + "%.8f" % count)
+            i = i +1
+
 
 
     def distributionAndWorth(self, currency):

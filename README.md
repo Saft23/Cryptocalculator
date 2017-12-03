@@ -32,8 +32,11 @@ wallet usd              //Prints the value in the wallet in usd
 wallet ___              //Prints the value in the wallet in ___ if the currency is available  
 wallet e                //Edits the wallet file  
 wallet add value coin	//Add value amount of coins to wallet  
-wallet dist		//Show the value distribution of the coins in the wallet  
-wallet distribution	//As above  
+wallet list		//List your wallet  
+wallet list dist	//Show the value distribution of the coins in the wallet
+            distribution	//As above  
+	    percent	//As above  
+	    value 	//Show the value instead of percent  
   
 value coin currency     //Prints the current price of the given coin in the given currency  
   
