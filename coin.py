@@ -45,6 +45,8 @@ if(len(sys.argv) > 1):
     if(sys.argv[1] == "wallet"):
         if(sys.argv[2] == "e"):
             wallet.editWallet()
+        elif(sys.argv[2] == "distribution" or sys.argv[2] == "dist"):
+            wallet.distribution()
         else:
             sumWallet = wallet.calculateWorth(sys.argv[2])
             if(sumWallet == 0):
