@@ -8,7 +8,6 @@ class Calculator(object):
         self.currencyAdress = "https://api.fixer.io/latest?base=USD"
         self.currencyResponse = requests.get(self.currencyAdress)
         self.currencyData = self.currencyResponse.json()
-        pass
     def priceOfCoin(self, name, currency):
         for item in self.data:
             if item['id'] == name:
