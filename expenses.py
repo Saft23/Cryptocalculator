@@ -23,6 +23,15 @@ class Expenses(object):
     def editExpenses(self):
         os.system("vim " + self.path)
 
+    def add(self, value):
+        self.expenses = open(self.path, "a")
+        self.expenses.write(value + "\n")
+        self.expenses.close()
+
+    def remove(self, value):
+        self.add("-" + value)
+        
+
     def currency(self):
         if(self.expenses == ""):
             self.expenses=open(self.path)

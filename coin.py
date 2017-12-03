@@ -38,9 +38,13 @@ if(len(sys.argv) > 1):
         if(len(sys.argv) > 2):
             if(sys.argv[2] == "e"):
                 expenses.editExpenses()
+            elif(sys.argv[2] == "add" and len(sys.argv) > 3):
+                expenses.add(sys.argv[3])
+            elif(sys.argv[2] == "remove" and len(sys.argv) > 3):
+                expenses.remove(sys.argv[3])
         else:
             sumExpenses = expenses.calculateExpenses()
-            print(str(sumExpenses) + "sek")
+            print(("%.2f" % sumExpenses) + "sek")
 
     if(sys.argv[1] == "wallet"):
         if(sys.argv[2] == "e"):
