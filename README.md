@@ -27,21 +27,23 @@ sum ___                 //Prints the difference between value and expenses if th
   
 expenses                //Prints the expenses  
 expenses e              //Edits the expenses file  
+expenses add *value*	//Add an expense
+expenses remove *value* //Remove *value* expense from expenses
   
-wallet usd              //Prints the value in the wallet in usd  
+wallet *usd*              //Prints the value in the wallet in usd  
 wallet ___              //Prints the value in the wallet in ___ if the currency is available  
 wallet e                //Edits the wallet file  
-wallet add value coin	//Add value amount of coins to wallet  
-wallet remove value coin	//Remove value amount of coins to wallet  
+wallet add *value* *coin*	//Add value amount of coins to wallet  
+wallet remove *value* coin*	//Remove value amount of coins to wallet  
 wallet list		//List your wallet  
 wallet list dist	//Show the value distribution of the coins in the wallet
             distribution	//As above  
 	    percent	//As above  
-	    value currency	//Show the value instead of percent  
+	    value *currency*	//Show the value instead of percent  
   
-value coin currency     //Prints the current price of the given coin in the given currency  
+value *coin* *currency*	//Prints the current price of the given coin in the given currency  
   
-diversify value currency coin coin ... 	//Distribute your money to get equal value of coins
+diversify *value* *currency* *coin* *coin* *...* 	//Distribute your money to get equal value of coins
 ```
   
   
@@ -49,7 +51,7 @@ diversify value currency coin coin ... 	//Distribute your money to get equal val
   
   
 todo:  
-Optimize api requests - done  
+~~Optimize api requests~~  
 bitfinex api key  
 bittrex api key  
 coinbase api??  
