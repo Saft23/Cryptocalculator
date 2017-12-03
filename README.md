@@ -64,6 +64,7 @@ coinbase api??
 fix parsing in .wallet - Quick fix  
 Windows support  
 Mac support   
+Gui  
   
   
 Contributors: LampaaN
