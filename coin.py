@@ -8,15 +8,6 @@ import sys
 wallet = Wallet()
 expenses = Expenses()
 
-#Avalible commands
-
-#sum percent
-#sum sek
-#expenses
-#wallet usd
-#wallet sek
-#wallet e
-#value coin currency
 
 if(len(sys.argv) > 1):
 
