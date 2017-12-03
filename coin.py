@@ -32,7 +32,7 @@ if(len(sys.argv) > 1):
             if(changer == 0):
                 changer = 1
             result = changer * result
-            print(str(result) + sys.argv[2])
+            print(str(("%.2f" % (result))) + sys.argv[2])
 
     if(sys.argv[1] == "expenses"):
         if(len(sys.argv) > 2):
