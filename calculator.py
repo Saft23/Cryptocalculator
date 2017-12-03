@@ -71,4 +71,3 @@ class Calculator(object):
         self.currencyResponse = requests.get(self.currencyAdress)
         self.currencyData = self.currencyResponse.json()
         json.dump(self.currencyData, open(self.currencyCachePath,'w'))
-        pass
