@@ -30,6 +30,7 @@ wallet e                //Edits the wallet file
 wallet dist		//Show the value distribution of the coins in the wallet  
 wallet distribution	//As above  
 value coin currency     //Prints the current price of the given coin in the given currency  
+diversify value currency coin coin ... 	//Distribute your money to get equal value of coins
 ```
   
   

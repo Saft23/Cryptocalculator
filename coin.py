@@ -58,7 +58,20 @@ if(len(sys.argv) > 1):
             calculator = Calculator()
             print(str(calculator.priceOfCoin(sys.argv[2], sys.argv[3])) + sys.argv[3])
         else:
-            print("value needs cryptoname and currency as argument")
+            print("Value needs cryptoname and currency as argument")
+
+    if(sys.argv[1] == "diversify"):
+        if(len(sys.argv) > 4):
+            calculator = Calculator()
+            args = sys.argv
+            value = args[2]
+            currency = args[3]
+            args.pop(0);args.pop(0);args.pop(0);args.pop(0)
+            coins = args
+            calculator.diversify(value, currency, coins)
+        else:
+            print("Need more arguments(at least 3). Ex. Value Currency Coin Coin ...")
+
 else:
     print("Give the program more arguments")
 

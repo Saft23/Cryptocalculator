@@ -36,6 +36,7 @@ class Calculator(object):
 
 
     def priceOfCoin(self, name, currency):
+        currency = currency.upper()
         for item in self.data:
             if item['id'] == name:
                 if(currency == "USD"):
@@ -49,6 +50,15 @@ class Calculator(object):
             return self.currencyData['rates'][currency]
         except Exception: 
             return 0
+
+    def diversify(self, value, currency, coins):
+        val = float(value)/len(coins)
+        for coin in coins:
+            if(coin[len(coin)-1] == 's'):
+                output = str(val/float(self.priceOfCoin(coin, currency))) + " " + coin + "'"
+            else: 
+                output = str(val/float(self.priceOfCoin(coin, currency))) + " " + coin + "'s"
+            print(output)  
 
     def updateCache(self):
         print("Updated cache")
