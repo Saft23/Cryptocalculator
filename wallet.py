@@ -18,6 +18,8 @@ class Wallet(object):
         returnValue = []
         returnCoin = []
         for item in walletlist:
+            if(item == ""):
+                item = "bitcoin: 0"
             fin = item.find(':')
             beg = 0
             coin = ""
