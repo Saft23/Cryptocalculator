@@ -56,9 +56,9 @@ class Calculator(object):
         val = float(value)/len(coins)
         for coin in coins:
             if(coin[len(coin)-1] == 's'):
-                output = str(val/float(self.priceOfCoin(coin, currency))) + " " + coin + "'"
+                output = ("%.8f" % (val/float(self.priceOfCoin(coin, currency)))) + " " + coin + "'"
             else: 
-                output = str(val/float(self.priceOfCoin(coin, currency))) + " " + coin + "'s"
+                output = ("%.8f" % (val/float(self.priceOfCoin(coin, currency)))) + " " + coin + "'s"
             print(output)  
 
     def updateCache(self):
