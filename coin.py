@@ -13,26 +13,30 @@ if(len(sys.argv) > 1):
 
     if(sys.argv[1] == "sum"):
         sumExpenses = expenses.calculateExpenses()
-        if(sys.argv[2] == "percent"):
-            sumWallet = wallet.calculateWorth("sek")
-            final = sumWallet / sumExpenses
-            final = final - 1
-            final = final * 100
-            final = int(final)
-            print(str(final) + "%")
+        if(len(sys.argv) > 2):
+            if(sys.argv[2] == "percent"):
+                sumWallet = wallet.calculateWorth("sek")
+                final = sumWallet / sumExpenses
+                final = final - 1
+                final = final * 100
+                final = int(final)
+                print(str(final) + "%")
+            else:
+                calculator = Calculator()
+                expensesCurrency = expenses.currency
+                currencyChanger = calculator.currency(expensesCurrency.upper())
+                rates = calculator.currency(expensesCurrency)
+                sumWallet = wallet.calculateWorth('usd')
+                sumExpenses = sumExpenses / currencyChanger
+                result = sumWallet - sumExpenses
+                changer = calculator.currency(sys.argv[2].upper())
+                if(changer == 0):
+                    changer = 1
+                result = changer * result
+                print(str(("%.2f" % (result))) + sys.argv[2])
         else:
-            calculator = Calculator()
-            expensesCurrency = expenses.currency
-            currencyChanger = calculator.currency(expensesCurrency.upper())
-            rates = calculator.currency(expensesCurrency)
-            sumWallet = wallet.calculateWorth('usd')
-            sumExpenses = sumExpenses / currencyChanger
-            result = sumWallet - sumExpenses
-            changer = calculator.currency(sys.argv[2].upper())
-            if(changer == 0):
-                changer = 1
-            result = changer * result
-            print(str(("%.2f" % (result))) + sys.argv[2])
+            print("The sum command requires one additional argument")
+    
 
     if(sys.argv[1] == "expenses"):
         if(len(sys.argv) > 2):
@@ -47,35 +51,40 @@ if(len(sys.argv) > 1):
             currency = expenses.currency
             print(("%.2f" % sumExpenses) + currency)
 
+
+
     if(sys.argv[1] == "wallet"):
-        if(sys.argv[2] == "e"):
-            wallet.editWallet()
-        elif(sys.argv[2] == "list"):
-            if(len(sys.argv) > 3):
-                if(sys.argv[3] == "distribution" or sys.argv[3] == "dist" or sys.argv[3] == "percent" ):
-                    wallet.distribution()
-                elif(sys.argv[3] == "value"):
-                    if(len(sys.argv) > 4):
-                        wallet.distributionAndWorth(sys.argv[4])
-                    else:
-                        print("Need currency argument")
-            else: 
-                wallet.listWallet()
-        elif(sys.argv[2] == "add"):
-            if(len(sys.argv) > 4):
-                wallet.add(sys.argv[3], sys.argv[4])
+        if(len(sys.argv) > 2):
+            if(sys.argv[2] == "e"):
+                wallet.editWallet()
+            elif(sys.argv[2] == "list"):
+                if(len(sys.argv) > 3):
+                    if(sys.argv[3] == "distribution" or sys.argv[3] == "dist" or sys.argv[3] == "percent" ):
+                        wallet.distribution()
+                    elif(sys.argv[3] == "value"):
+                        if(len(sys.argv) > 4):
+                            wallet.distributionAndWorth(sys.argv[4])
+                        else:
+                            print("Need currency argument")
+                else: 
+                    wallet.listWallet()
+            elif(sys.argv[2] == "add"):
+                if(len(sys.argv) > 4):
+                    wallet.add(sys.argv[3], sys.argv[4])
+                else:
+                    print("Need more arguments")
+            elif(sys.argv[2] == "remove"):
+                if(len(sys.argv) > 4):
+                    wallet.add("-" + sys.argv[3], sys.argv[4])
+                else:
+                    print("Need more arguments")
             else:
-                print("Need more arguments")
-        elif(sys.argv[2] == "remove"):
-            if(len(sys.argv) > 4):
-                wallet.add("-" + sys.argv[3], sys.argv[4])
-            else:
-                print("Need more arguments")
+                sumWallet = wallet.calculateWorth(sys.argv[2])
+                if(sumWallet == 0):
+                    print("Unkown currency or empty wallet")
+                print(str(sumWallet) + sys.argv[2].upper())
         else:
-            sumWallet = wallet.calculateWorth(sys.argv[2])
-            if(sumWallet == 0):
-                print("Unkown currency or empty wallet")
-            print(str(sumWallet) + sys.argv[2].upper())
+            print("Wallet command requires additional arguments")
             
     if(sys.argv[1] == "value"):
         if(len(sys.argv) > 3):
