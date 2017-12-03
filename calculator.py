@@ -49,6 +49,8 @@ class Calculator(object):
 
     def currency(self, currency):
         try:
+            if(currency.upper() == "USD"):
+                return 1
             return self.currencyData['rates'][currency]
         except Exception: 
             return 0

@@ -94,7 +94,7 @@ class Wallet(object):
 
     def distributionAndWorth(self, currency):
         self.calculator = Calculator()
-        currencyVal = self.calculator.currency(currency)
+        currencyVal = self.calculator.currency(currency.upper())
         coinArray = self.getWalletArray('usd','coin')
         valueArray = self.getWalletArray('usd','value')
         i = 0

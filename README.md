@@ -32,6 +32,7 @@ wallet usd              //Prints the value in the wallet in usd
 wallet ___              //Prints the value in the wallet in ___ if the currency is available  
 wallet e                //Edits the wallet file  
 wallet add value coin	//Add value amount of coins to wallet  
+wallet remove value coin	//Remove value amount of coins to wallet  
 wallet list		//List your wallet  
 wallet list dist	//Show the value distribution of the coins in the wallet
             distribution	//As above  
