@@ -45,11 +45,25 @@ if(len(sys.argv) > 1):
     if(sys.argv[1] == "wallet"):
         if(sys.argv[2] == "e"):
             wallet.editWallet()
-        elif(sys.argv[2] == "distribution" or sys.argv[2] == "dist"):
-            wallet.distribution()
+        elif(sys.argv[2] == "list"):
+            if(len(sys.argv) > 3):
+                if(sys.argv[3] == "distribution" or sys.argv[3] == "dist" or sys.argv[3] == "percent" ):
+                    wallet.distribution()
+                elif(sys.argv[3] == "value"):
+                    if(len(sys.argv) > 4):
+                        wallet.distributionAndWorth(sys.argv[4])
+                    else:
+                        print("Need currency argument")
+            else: 
+                wallet.listWallet()
         elif(sys.argv[2] == "add"):
             if(len(sys.argv) > 4):
                 wallet.add(sys.argv[3], sys.argv[4])
+            else:
+                print("Need more arguments")
+        elif(sys.argv[2] == "remove"):
+            if(len(sys.argv) > 4):
+                wallet.add("-" + sys.argv[3], sys.argv[4])
             else:
                 print("Need more arguments")
         else:
