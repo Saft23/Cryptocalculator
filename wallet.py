@@ -48,6 +48,16 @@ class Wallet(object):
             print(coin + ": " + ("%.2f" % ((valueArray[i] / total)*100)) + "%")
             i = i +1
 
+    def distributionAndWorth(self, currency):
+        self.calculator = Calculator()
+        currencyVal = self.calculator.currency(currency)
+        coinArray = self.getWalletArray('usd','coin')
+        valueArray = self.getWalletArray('usd','value')
+        i = 0
+        for value in valueArray:
+            print(coinArray[i] + ": " + "%.1f" % (value * currencyVal) + " " + currency)
+            i = i +1
+
 
     def calculateWorth(self, currency):
         return sum(self.getWalletArray(currency, 'value'))
