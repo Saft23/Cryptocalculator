@@ -25,8 +25,10 @@ sum sek                 //Prints the difference between value and expenses
 expenses                //Prints the expenses  
 expenses e              //Edits the expenses file  
 wallet usd              //Prints the value in the wallet in usd  
-wallet sek              //Prints the value in the wallet in sek  
+wallet ___              //Prints the value in the wallet in ___ if the currency is available  
 wallet e                //Edits the wallet file  
+wallet dist		//Show the value distribution of the coins in the wallet  
+wallet distribution	//As above  
 value coin currency     //Prints the current price of the given coin in the given currency  
 ```
   
