@@ -24,14 +24,19 @@ Available arguments/commands:
 sum percent             //Prints the percentage of the value compared to the expenses  
 sum usd                 //Prints the difference between value and expenses in usd
 sum ___                 //Prints the difference between value and expenses if the currency is avalible
+  
 expenses                //Prints the expenses  
 expenses e              //Edits the expenses file  
+  
 wallet usd              //Prints the value in the wallet in usd  
 wallet ___              //Prints the value in the wallet in ___ if the currency is available  
 wallet e                //Edits the wallet file  
+wallet add value coin	//Add value amount of coins to wallet  
 wallet dist		//Show the value distribution of the coins in the wallet  
 wallet distribution	//As above  
+  
 value coin currency     //Prints the current price of the given coin in the given currency  
+  
 diversify value currency coin coin ... 	//Distribute your money to get equal value of coins
 ```
   
