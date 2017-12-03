@@ -62,7 +62,8 @@ bitfinex api key
 bittrex api key  
 coinbase api??  
 fix parsing in .wallet - Quick fix
-  
+Windows support  
+Mac support   
   
   
 Contributors: LampaaN
