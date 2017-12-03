@@ -53,7 +53,7 @@ if(len(sys.argv) > 1):
                     if(len(sys.argv) > 4):
                         wallet.distributionAndWorth(sys.argv[4])
                     else:
-                        print("Need more arguments")
+                        print("Need currency argument")
             else: 
                 wallet.listWallet()
         elif(sys.argv[2] == "add"):

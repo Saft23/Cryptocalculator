@@ -36,7 +36,7 @@ wallet list		//List your wallet
 wallet list dist	//Show the value distribution of the coins in the wallet
             distribution	//As above  
 	    percent	//As above  
-	    value 	//Show the value instead of percent  
+	    value currency	//Show the value instead of percent  
   
 value coin currency     //Prints the current price of the given coin in the given currency  
   
