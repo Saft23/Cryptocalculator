@@ -30,7 +30,7 @@ class Calculator(object):
         currentTime = int(time.time())
         updateTime = int(self.data[0]['last_updated'])
         if(updateTime < (currentTime - 600)):
-            updateCache() 
+            self.updateCache() 
         
 
 
