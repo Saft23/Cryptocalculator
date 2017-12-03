@@ -44,7 +44,8 @@ if(len(sys.argv) > 1):
                 expenses.remove(sys.argv[3])
         else:
             sumExpenses = expenses.calculateExpenses()
-            print(("%.2f" % sumExpenses) + "sek")
+            currency = expenses.currency
+            print(("%.2f" % sumExpenses) + currency)
 
     if(sys.argv[1] == "wallet"):
         if(sys.argv[2] == "e"):
