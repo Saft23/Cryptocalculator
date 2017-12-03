@@ -45,6 +45,7 @@ class Calculator(object):
 
                 else:
                     return float(item["price_usd"])*self.currency(currency)
+        return -1
 
     def currency(self, currency):
         try:

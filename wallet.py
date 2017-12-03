@@ -17,6 +17,7 @@ class Wallet(object):
         walletlist.pop()
         returnValue = []
         returnCoin = []
+        returnCount = []
         for item in walletlist:
             if(item == ""):
                 item = "bitcoin: 0"
@@ -34,10 +35,13 @@ class Wallet(object):
             numCoin = float(numCoin)
             returnValue.append(coinWorth * numCoin)
             returnCoin.append(coin)
+            returnCount.append(numCoin)
         if(coinOrValue == 'coin'):
             return returnCoin
         elif(coinOrValue == 'value'):
             return returnValue
+        elif(coinOrValue == 'count'):
+            return returnCount
 
     def distribution(self):
         coinArray = self.getWalletArray('usd', 'coin')
@@ -47,6 +51,38 @@ class Wallet(object):
         for coin in coinArray:
             print(coin + ": " + ("%.2f" % ((valueArray[i] / total)*100)) + "%")
             i = i +1
+
+    def add(self, value, coin):
+        self.calculator = Calculator()
+        if(self.calculator.priceOfCoin(coin, "USD") == -1):
+            print("Coin doesnt exist")
+            return
+
+        dataArray = []
+        coinExist = False
+        coinCount = self.getWalletArray('usd', 'count')
+        coins = self.getWalletArray('usd', 'coin')
+        try:
+            coinIndex = coins.index(coin)
+            coinExist = True
+        except Exception:
+            coinExist = False
+        if(coinExist):
+            coinCount[coinIndex] = coinCount[coinIndex] + float(value)
+            for index, coin in enumerate(coins):
+                dataArray.append( coin + ": " + str(coinCount[index]))
+
+            self.wallet = open(self.path, 'w')
+            self.wallet.write('\n'.join(map(str, dataArray)) + '\n')
+            self.wallet.close()
+            
+        else:
+            self.wallet = open(self.path, "a")
+            self.wallet.write(coin + ": " + value + "\n")
+            self.wallet.close()
+
+
+
 
     def distributionAndWorth(self, currency):
         self.calculator = Calculator()

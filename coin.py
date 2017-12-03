@@ -47,6 +47,11 @@ if(len(sys.argv) > 1):
             wallet.editWallet()
         elif(sys.argv[2] == "distribution" or sys.argv[2] == "dist"):
             wallet.distribution()
+        elif(sys.argv[2] == "add"):
+            if(len(sys.argv) > 4):
+                wallet.add(sys.argv[3], sys.argv[4])
+            else:
+                print("Need more arguments")
         else:
             sumWallet = wallet.calculateWorth(sys.argv[2])
             if(sumWallet == 0):
