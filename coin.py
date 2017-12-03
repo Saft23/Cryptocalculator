@@ -21,9 +21,18 @@ if(len(sys.argv) > 1):
             final = int(final)
             print(str(final) + "%")
         else:
-            sumWallet = wallet.calculateWorth("sek")
+            calculator = Calculator()
+            expensesCurrency = expenses.currency
+            currencyChanger = calculator.currency(expensesCurrency.upper())
+            rates = calculator.currency(expensesCurrency)
+            sumWallet = wallet.calculateWorth('usd')
+            sumExpenses = sumExpenses / currencyChanger
             result = sumWallet - sumExpenses
-            print(str(result) + "sek")
+            changer = calculator.currency(sys.argv[2].upper())
+            if(changer == 0):
+                changer = 1
+            result = changer * result
+            print(str(result) + sys.argv[2])
 
     if(sys.argv[1] == "expenses"):
         if(len(sys.argv) > 2):

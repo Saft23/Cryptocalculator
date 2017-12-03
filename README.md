@@ -8,8 +8,9 @@ ethereum: 942.4561313
 //ENDOFFILE  
   
   
-//.expences in sek  
-3451  
+//.expences //Definition of currency on the first line. Ex, usd, sek, eur
+sek
+3451.53
 45151  
 5613  
 2345  
