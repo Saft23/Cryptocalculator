@@ -36,13 +36,6 @@ value coin currency     //Prints the current price of the given coin in the give
   
   
   
-The guidelines regarding the API:  
-Please limit requests to no more than 10 per minute.  
-Endpoints update every 5 minutes.  
-
-  
-  
-  
 todo:  
 Optimize api requests - done  
 bitfinex api key  
