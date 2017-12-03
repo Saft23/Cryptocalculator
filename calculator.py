@@ -22,9 +22,9 @@ class Calculator(object):
             self.currencyData = self.currencyResponse.json()
             json.dump(self.currencyData, open(self.currencyCachePath,'w'))
 
-        with open('.coincache.json') as json_data:
+        with open(self.coinCachePath) as json_data:
                 self.data = json.load(json_data)
-        with open('.currencycache.json') as json_data:
+        with open(self.currencyCachePath) as json_data:
                 self.currencyData = json.load(json_data)
 
         currentTime = int(time.time())
@@ -55,9 +55,9 @@ class Calculator(object):
         self.adress = "https://api.coinmarketcap.com/v1/ticker/?limit=0"
         self.response = requests.get(self.adress)
         self.data = self.response.json()
-        json.dump(self.data, open('.coincache.json','w'))
+        json.dump(self.data, open(self.coinCachePath,'w'))
         self.currencyAdress = "https://api.fixer.io/latest?base=USD"
         self.currencyResponse = requests.get(self.currencyAdress)
         self.currencyData = self.currencyResponse.json()
-        json.dump(self.currencyData, open('.currencycache.json','w'))
+        json.dump(self.currencyData, open(self.currencyCachePath,'w'))
         pass
